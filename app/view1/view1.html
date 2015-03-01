@@ -1,1 +1,28 @@
-<p>This is the partial for view 1.</p>
+    <div layout="row" flex>
+
+      <md-sidenav class="md-sidenav-left md-whiteframe-z2" md-component-id="left" md-is-locked-open="$media('gt-sm')">
+        <md-list>
+          <md-item ng-repeat="it in users">
+            <md-item-content>
+              <md-button ng-click="selectUser(it)" ng-class="{'selected' : it === selected }">
+                <md-icon md-svg-icon="{{it.avatar}}" class="avatar"></md-icon>
+                {{it.name}}
+              </md-button>
+            </md-item-content>
+          </md-item>
+        </md-list>
+      </md-sidenav>
+
+      <md-content layout="column" flex class="content-wrapper md-padding" id="content">
+
+          <md-icon md-svg-icon="{{selected.avatar}}" ng-class="{avatar:selected}" aria-label="{{selected.name}}"></md-icon>
+          <h2>{{selected.name}}</h2>
+          <p>{{selected.content}}</p>
+
+          <md-button class="action" md-no-ink>
+            <md-icon md-svg-icon="menu" ng-click="showActions($event)"></md-icon>
+          </md-button>
+
+      </md-content>
+
+      </div>

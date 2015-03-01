@@ -2,7 +2,10 @@
 'use strict';
 
   angular
-      .module('starterApp', ['ngMaterial', 'users'])
+      .module('starterApp', ['ngMaterial', 'users','ngRoute',
+  'starterApp.view1',
+  'starterApp.view2',
+  'starterApp.version'])
       .config( function($mdThemingProvider, $mdIconProvider) {
 
       $mdIconProvider
