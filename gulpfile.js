@@ -3,6 +3,7 @@
 var gulp = require('gulp');
 var concat = require('gulp-concat');
 var ngAnnotate = require('gulp-ng-annotate');
+var uglify = require('gulp-uglify'); 
 gulp.task('default', function() {
 	
 });
@@ -12,7 +13,8 @@ gulp.task('scripts', function() {
     gulp.src(['./app/**/*.js'])
     .pipe(ngAnnotate())
     .pipe(concat('script.js'))
+
     //.pipe(stripDebug())
-    //.pipe(uglify())
+    .pipe(uglify())
     .pipe(gulp.dest('./dist/'));
 });
